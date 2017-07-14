@@ -1,16 +1,35 @@
-Write an application that allows you to create a User via JSON and persist it to some sort of datastore. Return back the JSON object just created. 
+# User API
+---
 
-The requirements for the application are as follows:
+Anagrams-Shannon-Paige is an API that allows for the creation and lookup of users. Clients interact with the API over HTTP, and all data sent and received is expected to be in JSON format.
+- Users have a first_name, last_name, email, social_security_number
+- All fields are required
+- Email must be of proper format
+- Social Security Number must be 9 digits long
+- All requests respond with only the following fields: first_name, last_name, email, and id
 
-1. To start fork the repo
-2. The user model must have a first_name, last_name, email, social_security_number
-3. Require all fields, validate that email is in the proper format, and that social_security_number is 9 digits long.
-4. All requests should respond with the user object with only the following fields: first_name, last_name, email, and id
-5. There needs to be an 'index' view that responds with all of the Users in system 
-6. There also needs to be a 'show' that responds with a specific user
-7. When finished open a pull request and assign it to the owner of this repo
+The API responds to the following endpoints:
 
-Bonus:
+- `GET /users`
+  - Returns a list of all the users in the database.
+- `GET /user/:id`
+  - Returns the user in the database with the id provided.
+- `POST /users`
+  - Creates a user.
 
-1. Add request specs that tests both a valid and invalid call to user create,show,and index requests
-2. Accept social security in either 000-00-0000 or 000000000 format
+## Implementation details
+
+#### Tools:
+- Rails
+- SQLite3
+- MiniTest/Spec
+
+
+## To Run Messenger
+### Locally
+- Clone the project
+- Run bundle install to install the required gems
+- Set up the database with `rake db:create db:migrate`
+- Start the server with rails s
+- Visit http://localhost:3000
+- Use curl or postman to hit the endpoints with http://localhost:3000
