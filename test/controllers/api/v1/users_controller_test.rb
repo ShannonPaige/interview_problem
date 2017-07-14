@@ -18,7 +18,6 @@ class Api::V1::UsersControllerTest < ActionController::TestCase
     assert_equal "shannon", res["first_name"]
     assert_equal "paige", res["last_name"]
     assert_equal "spaige@gmail.com", res["email"]
-    assert_equal "123456789", res["social_security_number"]
   end
 
   test "#create responds with error when first_name is missing" do
