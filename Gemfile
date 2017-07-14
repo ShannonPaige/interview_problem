@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'responders', '~> 2.0'
 gem "active_model_serializers"
+gem 'bootstrap-sass', '~> 3.3.6'
 
 group :development, :test do
   gem 'byebug'
@@ -18,4 +19,5 @@ group :development, :test do
   gem 'spring'
   gem 'pry'
   gem 'shoulda'
+  gem 'capybara'
 end

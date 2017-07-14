@@ -1,0 +1,11 @@
+edgar:
+  first_name: Edgar
+  last_name: Duran
+  email: ed@email.com
+  social_security_number: "123456789"
+
+mark:
+  first_name: Mark
+  last_name: Miranda
+  email: mm@email.com
+  social_security_number: "987654321"
