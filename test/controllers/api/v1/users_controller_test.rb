@@ -16,6 +16,32 @@ class Api::V1::UsersControllerTest < ActionController::TestCase
     assert_equal "mm@email.com", res[1]["email"]
   end
 
+  test "#index does not include social security numbers" do
+    get :index, format: :json
+    res = JSON.parse(response.body)
+
+    assert_equal nil, res[0]["social_security_number"]
+    assert_equal nil, res[1]["social_security_number"]
+  end
+
+  test "#show responds with a users" do
+    get :show, format: :json, id: 1
+    res = JSON.parse(response.body)
+
+    assert_response :success
+
+    assert_equal "Edgar", res["first_name"]
+    assert_equal "Duran", res["last_name"]
+    assert_equal "ed@email.com", res["email"]
+  end
+
+  test "#show does not include social security numbers" do
+    get :show, format: :json, id: 1
+    res = JSON.parse(response.body)
+
+    assert_equal nil, res["social_security_number"]
+  end
+
   test "#create responds with created user when params are valid" do
     params = {
       first_name: "shannon",
