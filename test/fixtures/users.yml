@@ -1,10 +1,12 @@
 edgar:
+  id: 1
   first_name: Edgar
   last_name: Duran
   email: ed@email.com
   social_security_number: "123456789"
 
 mark:
+  id: 2
   first_name: Mark
   last_name: Miranda
   email: mm@email.com
